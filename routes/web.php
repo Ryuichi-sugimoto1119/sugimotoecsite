@@ -32,6 +32,6 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-  if (env('APP_ENV') === 'local') {
-      URL::forceScheme('https');
-  }
+ if (env('APP_ENV') === 'production') {
+     URL::forceScheme('https');
+ }
