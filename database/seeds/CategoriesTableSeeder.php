@@ -12,6 +12,13 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        
+        if (App::environment() === 'production') {
+            $this->call('ProductionSeeder');
+        } else {
+            $this->call('LocalSeeder');
+        }
+        
        $major_category_names = [
             '本', 'コンピュータ', 'ディスプレイ'
         ];
